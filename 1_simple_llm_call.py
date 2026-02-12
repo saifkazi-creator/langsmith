@@ -1,6 +1,9 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_ollama import ChatOllama
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Simple one-line prompt
 prompt = PromptTemplate.from_template("{question}")
@@ -14,6 +17,6 @@ parser = StrOutputParser()
 chain = prompt | model | parser
 
 # Run it
-result = chain.invoke({"question": "What is the capital of Peru?"})
+result = chain.invoke({"question": "What is the capital of India?"})
 
 print(result)
